@@ -35,8 +35,8 @@ RUN chmod a+x \
 
 FROM base As publisher
 
-LABEL maintainer="kingcc"
-LABEL org.opencontainers.image.source=https://github.com/kingcc/warproxy
+LABEL maintainer="thainguyen06"
+LABEL org.opencontainers.image.source=https://github.com/thainguyen06/warproxy
 
 COPY --from=collector /bar/ /
 
@@ -55,7 +55,7 @@ RUN \
 ENV \
     S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
     PYTHONUNBUFFERED=1 \
-    TZ=Asia/Shanghai \
+    TZ=Asia/Ho_Chi_Minh \
     WARP_ENABLED=true \
     WARP_PLUS=true \
     SOCKS5_PORT=1080
