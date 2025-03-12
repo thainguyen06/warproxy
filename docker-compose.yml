@@ -1,6 +1,6 @@
 services:
   warproxy.server:
-    image: ghcr.io/kingcc/warproxy:latest
+    image: ghcr.io/thainguyen06/warproxy:latest
     restart: always
     environment:
       - WARP_PLUS=true
@@ -11,6 +11,7 @@ services:
     ports:
       - 127.0.0.1:1080:1080
       - 127.0.0.1:1081:1081
+    entrypoint: ["/init", " && ", "/usr/local/bin/new_warp_connection.sh"]
 
 networks:
   warproxy.network:
